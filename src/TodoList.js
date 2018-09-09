@@ -13,9 +13,6 @@ class TodoList extends Component {
       list: []
     }
 
-    this.handelInputChange = this.handelInputChange.bind(this)
-    this.handleBtnCLick = this.handleBtnCLick.bind(this)
-    this.handelDelete = this.handelDelete.bind(this)
   }
   render () {
     return (
@@ -34,22 +31,22 @@ class TodoList extends Component {
       </Fragment>
     )
   }
-
-  handelInputChange(e) {
+  // 属性初始化器语法 https://react.docschina.org/docs/handling-events.html
+  handelInputChange = (e) => {
     const value = e.target.value
     this.setState(() => ({
       value
     }))
   }
 
-  handleBtnCLick () {
+  handleBtnCLick = () => {
     this.setState((prevState) => ({
       list: [...prevState.list, prevState.value],
       value: ''
     }))
   }
 
-  handelDelete(index) {
+  handelDelete = (index) => {
     this.setState((prevState) => {
       const list = [...prevState.list]
       list.splice(index, 1)

@@ -1,27 +1,23 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 class TodoItem extends Component {
-  constructor (props) {
-    super(props)
-    this.handelColic = this.handelColic.bind(this)
-  }
   render () {
     const { item, shit } = this.props
     return (
-      <li onClick={this.handelColic}>
+      <li onClick={this.handelClick}>
        { shit } { item }
       </li>
     )
   }
 
-  handelColic () {
+  handelClick = () => {
     const { delItem, index } = this.props
     delItem(index)
   }
 }
 
 TodoItem.propTypes = {
-  shits: PropTypes.string.isRequired,
+  shit: PropTypes.string.isRequired,
   item: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   index: PropTypes.number,
   delItem: PropTypes.func
