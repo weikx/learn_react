@@ -13,7 +13,7 @@ class TodoList extends Component {
       list: []
     }
 
-    this.handelItemChange = this.handelItemChange.bind(this)
+    this.handelInputChange = this.handelInputChange.bind(this)
     this.handleBtnCLick = this.handleBtnCLick.bind(this)
     this.handelDelete = this.handelDelete.bind(this)
   }
@@ -22,10 +22,10 @@ class TodoList extends Component {
       <Fragment>
         <label htmlFor="shit">hello</label>
         <input
-        id="shit"
-        className="input"
-        value={this.state.value}
-        onChange={this.handelItemChange}
+          id="shit"
+          className="input"
+          value={this.state.value}
+          onChange={this.handelInputChange}
         />
         <button onClick={this.handleBtnCLick}>提交</button>
         <ul>
@@ -35,7 +35,7 @@ class TodoList extends Component {
     )
   }
 
-  handelItemChange(e) {
+  handelInputChange(e) {
     const value = e.target.value
     this.setState(() => ({
       value
